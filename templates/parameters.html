@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="param_style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script script type="text/javascript" src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photogrammetry Raid Planning</title>
+</head>
+<body>
+    <div class="navbar">
+      <div class="menu-item"><a href="index.html">Settings</a></div>
+      <div class="menu-item"><a class="active" href="parameters.html">Parameters</a></div>
+      <div class="menu-item"><a href="visualisation.html">Visualisation</a></div>
+    </div>
+
+    <div class="row">
+      <div class="main">
+          <div class="form">
+              <div class="form-group>">
+                 <label for="dx"> Area width [m]: </label>
+                 <input type="number" id="dx" name="dx" min="0" value="19090" class="input-control">
+              </div>
+              <div class="form-group>">
+                  <label for="dy"> Area height [m]: </label>
+                  <input type="number" id="dy" name="dy" min="0" value="17219" class="input-control">
+              </div>
+              <div class="form-group>">
+                  <label for="gsd">Ground Sampling Distance (GSD) [m]:</label>
+                  <input type="number" id="gsd" name="gsd" min="0" value="0.25" class="input-control">
+              </div>
+              <div class="form-group>">
+                  <label for="p">p [%]:</label>
+                  <input type="number" id="p" name="p" min="0" max='100' value="60" class="input-control">
+              </div>
+              <div class="form-group>">
+                  <label for="q">q [%]:</label>
+                  <input type="number" id="q" name="q" min="0" max='100' value="30" class="input-control">
+              </div>
+              <div class="form-group>">
+                <input type="submit" value="Apply">
+              </div>
+          </div>
+      </div>
+      <div class="side">
+        <h2>About Me</h2>
+        <h5>Photo of me:</h5>
+        <div class="fakeimg" style="height:200px;">Image</div>
+        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+        <h3>More Text</h3>
+        <p>Lorem ipsum dolor sit ame.</p>
+        <div class="fakeimg" style="height:60px;">Image</div><br>
+        <div class="fakeimg" style="height:60px;">Image</div><br>
+      </div>
+    </div>
+</body>
+</html>
+</body>
+</html>

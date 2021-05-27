@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    background-color:  #f0f0f5;
+}
+/* Style the top navigation bar */
+.navbar {
+    display: flex;
+    background-color: #333;
+}
+.menu-item {
+    text-align: center;
+    flex-basis: 1vw;
+    border-right: 1px solid white;
+    color: #ccccd0;
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 25px;
+}
+
+/* Style the navigation bar links */
+.menu-item a {
+    color: white;
+    padding: 5px 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Change color on hover */
+.menu-item a:hover {
+    background-color: #ddd;
+    border-radius: 10%;
+    color: black;
+}
+.menu-item a.active {
+    background-color: rgba(207, 212, 212, 0.4);
+    border-radius: 10%;
+    color: #e6ecec;
+}
+
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    flex: 20%;
+    background-color: #a5a3a3;
+    padding: 20px;
+    height: calc(100vh - 50px);
+}
+
+/* Main column */
+.main {
+    flex: 80%;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+.cameras {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 5%;
+    margin-left: 20%;
+}
+.cameras > div {
+    margin: 6px;
+}
+.header-cameras {
+    font-size: 20px;
+    margin-left: 20%;
+}
+.camera {
+    height: 200px;
+    width: 200px;
+}
+.name {
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.name .infotext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px;
+    position: absolute;
+    z-index: 1;
+    font-size: 15px;
+    bottom: -50%;
+    left: 50%;
+}
+.name .infotext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: 15px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+.name .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+.header-planes {
+    font-size: 20px;
+    margin-left: 20%;
+}
+.planes {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-left: 20%;
+}
+.planes > div {
+    margin: 6px;
+}
+.plane {
+    height: 200px;
+    width: 200px;
+}
+img {
+    border-radius: 2%;
+}
+input[type="checkbox"]{
+    display: none;
+}
+label {
+    border: 1px solid #fff;
+    padding: 10px;
+    display: block;
+    /*position: relative;*/
+    margin: 10px;
+    cursor: pointer;
+}
+
+label:before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid grey;
+    /*position: absolute;*/
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 28px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+}
+
+label img {
+    height: 150px;
+    width: 150px;
+    transition-duration: 0.2s;
+    transform-origin: 50% 50%;
+}
+
+:checked + label {
+    border-color: #ddd;
+}
+
+:checked + label:before {
+    content: "✓";
+    background-color: grey;
+    transform: scale(1);
+}
+
+:checked + label img {
+    transform: scale(0.9);
+    /* box-shadow: 0 0 5px #333; */
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+    }
+    .form-group .input-control {
+        margin-top: 2px;
+    }
+}
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row, .navbar {
+        flex-direction: column;
+    }
+}

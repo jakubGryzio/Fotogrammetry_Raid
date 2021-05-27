@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script script type="text/javascript" src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photogrammetry Raid Planning</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu-item"><a class="active" href="index.html">Settings</a></div>
+        <div class="menu-item"><a href="parameters.html">Parameters</a></div>
+        <div class="menu-item"><a href="visualisation.html">Visualisation</a></div>
+    </div>
+
+    <div class="row">
+        <div class="main">
+            <p class="header-cameras">Choose the camera (click on name to see details)</p>
+            <div class="cameras">
+                <div class="camera">
+                    <div class="name" onclick="infoCam()">
+                        <p><b>Z/I DMC IIe 230</b></p>
+                        <span class="infotext" id="info">
+                            <ul>
+                                <li><b>Matrix size (px):</b> 15552x14144</li>
+                                <li><b>Pixel size (&#181m):</b> 5.6</li>
+                                <li><b>Spectral canal:</b> R,G,B,NIR</li>
+                                <li><b>Focal [mm]:</b> 92</li>
+                                <li><b>Work time (s):</b>1.8</li>
+                                <li><b>Weight [kg]:</b>63</li>
+                            </ul>
+                        </span>
+                    </div>
+                        <input type="checkbox" id="z_i" name="camera" class="chb"/>
+                        <label for="z_i">
+                            <img src="static/z_i.jpg" width="200" height="200">
+                        </label>
+                </div>
+                <div class="camera">
+                    <div class="name" onclick="infoCam()">
+                        <p><b>Leica DMC III</b></p>
+                        <span class="infotext" id="info2">
+                            <ul>
+                                <li><b>Matrix size (px):</b> 25728x14592</li>
+                                <li><b>Pixel size (&#181m):</b> 3.9</li>
+                                <li><b>Spectral canal:</b> R,G,B,NIR</li>
+                                <li><b>Focal [mm]:</b> 92</li>
+                                <li><b>Work time (s):</b>1.9</li>
+                                <li><b>Weight [kg]:</b>63</li>
+                            </ul>
+                        </span>
+                    </div>
+                        <input type="checkbox" id="leica" name="camera" class="chb"/>
+                        <label for="leica">
+                            <img src="static/leica.jpg" width="200" height="200">
+                        </label>
+                </div>
+                <div class="camera">
+                    <div class="name" onclick="infoCam()">
+                        <p><b>UltraCam Falcon M2 70</b></p>
+                        <span class="infotext" id="info3">
+                            <ul>
+                                <li><b>Matrix size (px):</b> 17310x11310</li>
+                                <li><b>Pixel size (&#181m):</b> 6.0</li>
+                                <li><b>Spectral canal:</b> R,G,B,NIR</li>
+                                <li><b>Focal [mm]:</b> 70</li>
+                                <li><b>Work time (s):</b>1.35</li>
+                                <li><b>Weight [kg]:</b>61</li>
+                            </ul>
+                        </span>
+                    </div>
+                        <input type="checkbox" id="falcon" name="camera" class="chb"/>
+                        <label for="falcon">
+                            <img src="static/falcon.jpg" width="200" height="200">
+                        </label>
+                </div>
+                <div class="camera">
+                    <div class="name" onclick="infoCam()">
+                        <p><b>UltraCam Eagle M2 80</b></p>
+                        <span class="infotext" id="info4">
+                            <ul>
+                                <li><b>Matrix size (px):</b> 23010x14790</li>
+                                <li><b>Pixel size (&#181m):</b> 4.6</li>
+                                <li><b>Spectral canal:</b> R,G,B,NIR</li>
+                                <li><b>Focal [mm]:</b> 80</li>
+                                <li><b>Work time (s):</b> 1.65</li>
+                                <li><b>Weight [kg]:</b> 61</li>
+                            </ul>
+                        </span>
+                    </div>
+                        <input type="checkbox" id="eagle" name="camera" class="chb"/>
+                        <label for="eagle">
+                            <img src="static/eagle.jpg" width="200" height="200">
+                        </label>
+                </div>
+            </div>
+            <p class="header-planes">Choose the plane (click on name to see details)</p>
+            <div class="planes">
+                <div class="plane">
+                    <div class="name" onclick="infoFly()">
+                        <p><b>Cessna 402</b></p>
+                        <span class="infotext" id="infoP">
+                            <ul>
+                                <li><b>Speed [km/h]:</b> 132-428</li>
+                                <li><b>Speed [km/h]:</b> 8200</li>
+                                <li><b>Fly time [h]:</b> 5</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <input type="checkbox" id="cessna" name="plane" class="chb"/>
+                    <label for="cessna">
+                        <img src="static/cessna-402.jpg" width="200" height="200">
+                    </label>
+                </div>
+                <div class="plane">
+                    <div class="name" onclick="infoFly()">
+                        <p><b>Cessna T206H NAV III</b></p>
+                        <span class="infotext" id="infoP1">
+                            <ul>
+                                <li><b>Speed [km/h]:</b> 100-280</li>
+                                <li><b>Speed [km/h]:</b> 1785</li>
+                                <li><b>Fly time [h]:</b> 5</li>
+                            </ul>
+                        </span>
+                    </div>
+                        <input type="checkbox" id="n16" name="plane" class="chb"/>
+                        <label for="n16">
+                            <img src="static/n16_4.jpg" width="200" height="200">
+                        </label>
+                </div>
+                <div class="plane">
+                    <div class="name" onclick="infoFly()">
+                        <p><b>Vulcan Air P68 Observer</b></p>
+                        <span class="infotext" id="infoP2">
+                            <ul>
+                                <li><b>Speed [km/h]:</b> 135-275</li>
+                                <li><b>Speed [km/h]:</b> 6100</li>
+                                <li><b>Fly time [h]:</b> 6</li>
+                            </ul>
+                        </span>
+                    </div>
+                        <input type="checkbox" id="vulcan" name="plane" class="chb"/>
+                        <label for="vulcan">
+                            <img src="static/vulcan.jpg" width="200" height="200">
+                        </label>
+                </div>
+                <div class="plane">
+                    <div class="name" onclick="infoFly()">
+                        <p><b>Tencam MMA</b></p>
+                        <span class="infotext" id="infoP3">
+                            <ul>
+                                <li><b>Speed [km/h]:</b> 120-267</li>
+                                <li><b>Speed [km/h]:</b> 4572</li>
+                                <li><b>Fly time [h]:</b> 6</li>
+                            </ul>
+                        </span>
+                    </div>
+                        <input type="checkbox" id="tencam" name="plane" class="chb"/>
+                        <label for="tencam">
+                            <img src="static/tencam_mma.jpg" width="200" height="200">
+                        </label>
+                </div>
+            </div>
+        </div>
+        <div class="side">
+            <h2>About Me</h2>
+            <h5>Photo of me:</h5>
+            <div class="fakeimg" style="height:200px;">Image</div>
+            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            <h3>More Text</h3>
+            <p>Lorem ipsum dolor sit ame.</p>
+            <div class="fakeimg" style="height:60px;">Image</div><br>
+            <div class="fakeimg" style="height:60px;">Image</div><br>
+        </div>
+    </div>
+</body>
+</html>
