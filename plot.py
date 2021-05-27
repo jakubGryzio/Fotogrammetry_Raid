@@ -1,3 +1,5 @@
+import math
+
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
@@ -24,7 +26,7 @@ for y in range(0, user.Dy, By):
 for x in range(0, user.Dx, Bx):
     plt.plot([x, x], wsp_y, color='b', lw=0.3)
 for y in range(user.Dy // row // 2, user.Dy, By):
-    for x in range(int(-1.5 * Bx), user.Dx + int(1.5 * Bx), Bx):
+    for x in range(math.ceil(-1.5 * Bx), user.Dx + math.ceil(1.5 * Bx), Bx):
         circle = plt.Circle((x, y), 70, color='black')
         ax.add_patch(circle)
 
