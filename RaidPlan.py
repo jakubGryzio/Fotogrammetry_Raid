@@ -19,4 +19,7 @@ class RaidPlan:
         rowNumber = self.camera.getRowNumber()
         max_interval, min_interval = self.interval()
         time = (photosNumber - 1) * min_interval * rowNumber + (140 * (rowNumber - 1))
-        return round(time / 60), round((time / 60 - math.floor(time / 60)) * 60)
+        print(time)
+        return math.floor(time / 3600), math.floor((time - math.floor((time / 3600)) * 3600) / 60), \
+               math.floor((time - math.floor((time / 3600)) * 3600) - math.floor(
+                   (time - math.floor((time / 3600)) * 3600) / 60) * 60)

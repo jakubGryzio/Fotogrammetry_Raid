@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/style.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photogrammetry Raid Planning</title>
+</head>
+<body>
+<div class="navbar">
+  <div class="menu-item"><a href="{{ url_for("main") }}">Settings</a></div>
+  <div class="menu-item"><a href="{{ url_for("parameters") }}">Parameters</a></div>
+  <div class="menu-item"><a class="active"  href="{{ url_for("visualization") }}">Visualization</a></div>
+</div>
+
+<div class="row">
+  <div class="main">
+      <div class="plot">
+        <img src="{{ url_for('plot') }}" alt="Image" class="plot-resp">
+      </div>
+  </div>
+  <div class="side">
+    <h1>Other calculated parameters</h1>
+    <p><b>W (Fly height): </b>{{ w }} m</p>
+    <p><b>Lx (Field image coverage along the direction of flight): </b>{{ lx }} m</p>
+    <p><b>Ly (Field image coverage across the direction of flight): </b>{{ ly }} m</p>
+    <p><b>Bx (Terrain dimension of the longitudinal base): </b>{{ bx }} m</p>
+    <p><b>By (Terrain dimension of the transverse base):</b>{{ by }} m</p>
+    <p><b>Fly time: </b> {{ h }} h {{ min }} min {{ sec }} sec</p>
+  </div>
+</div>
+</body>
+</html>

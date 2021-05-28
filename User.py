@@ -8,8 +8,8 @@ class User:
             self.Dx = args[3]
             self.Dy = args[4]
         else:
-            self.GSD = 0.25
-            self.p = 60
-            self.q = 30
-            self.Dx = 19090
-            self.Dy = 17219
+            self.GSD = 0
+            self.p = 0
+            self.q = 0
+            self.Dx = 0
+            self.Dy = 0

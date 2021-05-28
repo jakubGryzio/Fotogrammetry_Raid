@@ -2,58 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="param_style.css">
+  <link rel="stylesheet" href="../static/param_style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script script type="text/javascript" src="script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photogrammetry Raid Planning</title>
 </head>
 <body>
     <div class="navbar">
-      <div class="menu-item"><a href="index.html">Settings</a></div>
-      <div class="menu-item"><a class="active" href="parameters.html">Parameters</a></div>
-      <div class="menu-item"><a href="visualisation.html">Visualisation</a></div>
+      <div class="menu-item"><a href="{{ url_for("main") }}">Settings</a></div>
+      <div class="menu-item"><a class="active" href="{{ url_for("parameters") }}">Parameters</a></div>
+      <div class="menu-item"><a href="{{ url_for("visualization") }}">Visualization</a></div>
     </div>
 
     <div class="row">
       <div class="main">
-          <div class="form">
-              <div class="form-group>">
-                 <label for="dx"> Area width [m]: </label>
-                 <input type="number" id="dx" name="dx" min="0" value="19090" class="input-control">
+          <form action="{{ url_for("parameters") }}" method="post">
+              <div class="form">
+                  <div class="form-group>">
+                     <label for="dx"> Area width [m]: </label>
+                     <input type="number" id="dx" name="dx" min="0" value="19090" class="input-control">
+                  </div>
+                  <div class="form-group>">
+                      <label for="dy"> Area height [m]: </label>
+                      <input type="number" id="dy" name="dy" min="0" value="17219" class="input-control">
+                  </div>
+                  <div class="form-group>">
+                      <label for="gsd">Ground Sampling Distance (GSD) [m]:</label>
+                      <input type="number" id="gsd" name="gsd" min="0" value="0.25" step="0.01" class="input-control">
+                  </div>
+                  <div class="form-group>">
+                      <label for="p">p [%]:</label>
+                      <input type="number" id="p" name="p" min="0" max='100' value="60" class="input-control">
+                  </div>
+                  <div class="form-group>">
+                      <label for="q">q [%]:</label>
+                      <input type="number" id="q" name="q" min="0" max='100' value="30" class="input-control">
+                  </div>
+                  <div class="form-group>">
+                    <input type="submit" value="Apply">
+                  </div>
               </div>
-              <div class="form-group>">
-                  <label for="dy"> Area height [m]: </label>
-                  <input type="number" id="dy" name="dy" min="0" value="17219" class="input-control">
-              </div>
-              <div class="form-group>">
-                  <label for="gsd">Ground Sampling Distance (GSD) [m]:</label>
-                  <input type="number" id="gsd" name="gsd" min="0" value="0.25" class="input-control">
-              </div>
-              <div class="form-group>">
-                  <label for="p">p [%]:</label>
-                  <input type="number" id="p" name="p" min="0" max='100' value="60" class="input-control">
-              </div>
-              <div class="form-group>">
-                  <label for="q">q [%]:</label>
-                  <input type="number" id="q" name="q" min="0" max='100' value="30" class="input-control">
-              </div>
-              <div class="form-group>">
-                <input type="submit" value="Apply">
-              </div>
-          </div>
+          </form>
       </div>
       <div class="side">
-        <h2>About Me</h2>
-        <h5>Photo of me:</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-        <h3>More Text</h3>
-        <p>Lorem ipsum dolor sit ame.</p>
-        <div class="fakeimg" style="height:60px;">Image</div><br>
-        <div class="fakeimg" style="height:60px;">Image</div><br>
+        <h1>How to use the application</h1>
+        <p>The photogrammetry raid planning is used to select the proper camera and plane and set the right parameter to visualize photogrammetry raid</p>
+        <p>At the settings page, you can choose the camera and the plane, then go to the parameter page by clicking the button.</p>
+        <p>You can set proper parameters to visualize raid at the parameters page.</p>
+        <p>In order to see visualize the photogrammetry raid click the button, then you moved to visualization page.</p>
+        <p>If you would like to change settings, choose the right page in the menu.</p>
       </div>
     </div>
 </body>

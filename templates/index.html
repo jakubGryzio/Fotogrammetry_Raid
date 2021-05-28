@@ -2,24 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="../static/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photogrammetry Raid Planning</title>
 </head>
 <body>
     <div class="navbar">
         <div class="menu-item"><a class="active" href="index.html">Settings</a></div>
-        <div class="menu-item"><a href="parameters.html">Parameters</a></div>
-        <div class="menu-item"><a href="visualisation.html">Visualisation</a></div>
+        <div class="menu-item"><a href="{{ url_for("parameters") }}">Parameters</a></div>
+        <div class="menu-item"><a href="{{ url_for("visualization") }}">Visualization</a></div>
     </div>
 
     <div class="row">
         <div class="main">
             <p class="header-cameras">Choose the camera (click on name to see details)</p>
+            <form action="{{ url_for("main") }}" method="post">
             <div class="cameras">
                 <div class="camera">
                     <div class="name" onclick="infoCam()">
@@ -35,9 +37,9 @@
                             </ul>
                         </span>
                     </div>
-                        <input type="checkbox" id="z_i" name="camera" class="chb"/>
+                        <input type="checkbox" id="z_i" name="camera" value="z_i" class="chb" checked/>
                         <label for="z_i">
-                            <img src="static/z_i.jpg" width="200" height="200">
+                            <img src="../static/z_i.jpg" width="200" height="200">
                         </label>
                 </div>
                 <div class="camera">
@@ -54,9 +56,9 @@
                             </ul>
                         </span>
                     </div>
-                        <input type="checkbox" id="leica" name="camera" class="chb"/>
+                        <input type="checkbox" id="leica" name="camera" value="leica" class="chb"/>
                         <label for="leica">
-                            <img src="static/leica.jpg" width="200" height="200">
+                            <img src="../static/leica.jpg" width="200" height="200">
                         </label>
                 </div>
                 <div class="camera">
@@ -73,9 +75,9 @@
                             </ul>
                         </span>
                     </div>
-                        <input type="checkbox" id="falcon" name="camera" class="chb"/>
+                        <input type="checkbox" id="falcon" name="camera" value="falcon" class="chb"/>
                         <label for="falcon">
-                            <img src="static/falcon.jpg" width="200" height="200">
+                            <img src="../static/falcon.jpg" width="200" height="200">
                         </label>
                 </div>
                 <div class="camera">
@@ -92,9 +94,9 @@
                             </ul>
                         </span>
                     </div>
-                        <input type="checkbox" id="eagle" name="camera" class="chb"/>
+                        <input type="checkbox" id="eagle" name="camera" value="eagle" class="chb"/>
                         <label for="eagle">
-                            <img src="static/eagle.jpg" width="200" height="200">
+                            <img src="../static/eagle.jpg" width="200" height="200">
                         </label>
                 </div>
             </div>
@@ -111,9 +113,9 @@
                             </ul>
                         </span>
                     </div>
-                    <input type="checkbox" id="cessna" name="plane" class="chb"/>
+                    <input type="checkbox" id="cessna" name="plane" value="cessna" class="chb"/>
                     <label for="cessna">
-                        <img src="static/cessna-402.jpg" width="200" height="200">
+                        <img src="../static/cessna-402.jpg" width="200" height="200">
                     </label>
                 </div>
                 <div class="plane">
@@ -127,9 +129,9 @@
                             </ul>
                         </span>
                     </div>
-                        <input type="checkbox" id="n16" name="plane" class="chb"/>
+                        <input type="checkbox" id="n16" name="plane" value="n16" class="chb"/>
                         <label for="n16">
-                            <img src="static/n16_4.jpg" width="200" height="200">
+                            <img src="../static/n16_4.jpg" width="200" height="200">
                         </label>
                 </div>
                 <div class="plane">
@@ -143,9 +145,9 @@
                             </ul>
                         </span>
                     </div>
-                        <input type="checkbox" id="vulcan" name="plane" class="chb"/>
+                        <input type="checkbox" id="vulcan" name="plane" value="vulcan" class="chb"/>
                         <label for="vulcan">
-                            <img src="static/vulcan.jpg" width="200" height="200">
+                            <img src="../static/vulcan.jpg" width="200" height="200">
                         </label>
                 </div>
                 <div class="plane">
@@ -159,22 +161,22 @@
                             </ul>
                         </span>
                     </div>
-                        <input type="checkbox" id="tencam" name="plane" class="chb"/>
+                        <input type="checkbox" id="tencam" name="plane" value="tencam" class="chb" checked/>
                         <label for="tencam">
-                            <img src="static/tencam_mma.jpg" width="200" height="200">
+                            <img src="../static/tencam_mma.jpg" width="200" height="200">
                         </label>
                 </div>
             </div>
+            <input type="submit" value="Set parameters">
+            </form>
         </div>
         <div class="side">
-            <h2>About Me</h2>
-            <h5>Photo of me:</h5>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-            <h3>More Text</h3>
-            <p>Lorem ipsum dolor sit ame.</p>
-            <div class="fakeimg" style="height:60px;">Image</div><br>
-            <div class="fakeimg" style="height:60px;">Image</div><br>
+            <h1>How to use the application</h1>
+            <p>The photogrammetry raid planning is used to select the proper camera and plane and set the right parameter to visualize photogrammetry raid</p>
+            <p>At the settings page, you can choose the camera and the plane, then go to the parameter page by clicking the button.</p>
+            <p>You can set proper parameters to visualize raid at the parameters page.</p>
+            <p>In order to see visualize the photogrammetry raid click the button, then you will be moved to visualization page.</p>
+            <p>If you would like to change settings, choose the right page in the menu.</p>
         </div>
     </div>
 </body>

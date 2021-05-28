@@ -14,7 +14,7 @@ class Matrix:
 
 
 class Camera:
-    user = User()
+    user = None
 
     def __init__(self, name, matrix_size, pixel_size, focal, work_time, weight):
         self.name = name
@@ -24,8 +24,8 @@ class Camera:
         self.focal = focal * np.float_power(10, -3)
         self.work_time = work_time
         self.weight = weight
-        self.p = self.user.p
-        self.q = self.user.q
+        self.p = None
+        self.q = None
 
     def getW(self):
         return self.user.GSD * self.focal / self.pixel_size
@@ -37,9 +37,13 @@ class Camera:
         return self.matrix_size.y * self.user.GSD
 
     def getBx(self):
+        if self.p is None:
+            self.p = self.user.p
         return self.getLx() * ((100 - self.p) / 100)
 
     def getBy(self):
+        if self.q is None:
+            self.q = self.user.q
         return self.getLy() * ((100 - self.q) / 100)
 
     def getHabs(self, Hmin, Hmax):
